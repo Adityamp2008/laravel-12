@@ -82,6 +82,7 @@ class peminjamanController extends Controller
             'buku_id' => 'required|exists:buku,id',
             'anggota_id' => 'required|exists:anggota,id',
             'tgl_pinjam' => 'required|date',
+            'tgl_pengembalian' => 'nullable|date',
             'tgl_wajib_kembali' => 'required|date|after_or_equal:tgl_pinjam',
             'status' => 'required|string|max:20',
         ]);
@@ -96,6 +97,7 @@ class peminjamanController extends Controller
             'denda' => $request->denda ?? 0,
             'status' => $request->status,
         ]);
+         $peminjaman->save();
 
           return redirect()->route('peminjaman.index')->with('success', 'Data peminjaman diperbarui.');
     }

@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\KelolaAnggotaController;
 use App\Http\Controllers\Admin\KategoriBukuController;
 use App\Http\Controllers\Admin\KelolaBukuController;
 use App\Http\Controllers\Admin\peminjamanController;
+use App\Http\Controllers\Admin\LaporanController;
 use App\Http\Controllers\LoginController;
 use App\Models\KategoriBuku;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +20,10 @@ Route::group(['admin'], function () {
     Route::resource('Kategori', KategoriBukuController::class);
     Route::resource('buku', KelolaBukuController::class);
     Route::resource('peminjaman', peminjamanController::class);
-    // Route::resource('laporan', KategoriBukuController::class);
+    Route::get('/laporan/peminjaman', [App\Http\Controllers\LaporanController::class, 'index'])->name('laporan.peminjaman');
+
+    Route::get('/laporan-peminjaman/pdf', [App\Http\Controllers\LaporanController::class, 'exportPdf'])->name('laporan.peminjaman.pdf');
+
    
 
     // cara manuak satu-satu

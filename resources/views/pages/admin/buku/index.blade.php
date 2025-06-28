@@ -57,7 +57,7 @@
                                     <td>{{ $buku->judul_buku }}</td>
                                     <td>{{ $buku->pengarang }}</td>
                                     <td>{{ $buku->penerbit }}</td>
-                                    <td>{{ $buku->tahun_terbit }}</td>
+                                    <td>Thn {{ $buku->tahun_terbit }}</td>
                                     <td>{{ $buku->deskripsi }}</td>
                                     <td>
                                         <img src="{{ asset('storage/' . $buku->foto_sampul) }}" width="50" alt="Foto Sampul">

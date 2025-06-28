@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Darbor</h1>
+                    <h1>Dasbor</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -28,7 +28,7 @@
                     <div class="info-box-content">
                         <span class="info-box-text">Jumlah Anggota</span>
                         <span class="info-box-number">
-                            0
+                            {{ $jumlahanggota}}
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -42,7 +42,7 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">Jumlah Kategori Buku</span>
-                        <span class="info-box-number">0</span>
+                        <span class="info-box-number">{{ $jumlahkategori}}</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -59,7 +59,7 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">Jumlah Buku</span>
-                        <span class="info-box-number">0</span>
+                        <span class="info-box-number">{{ $jumlahbuku}}</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -72,7 +72,7 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">Jumlah Peminjaman</span>
-                        <span class="info-box-number">0</span>
+                        <span class="info-box-number">{{ $jumlahpeminjaman}}</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
