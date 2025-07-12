@@ -53,9 +53,9 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $peminjaman->buku->judul_buku ?? '-' }}</td>
                                         <td>{{ $peminjaman->anggota->nama ?? '-' }}</td>
-                                        <td>{{ $peminjaman->tgl_pinjam }}</td>
-                                        <td>{{ $peminjaman->tgl_wajib_kembali }}</td>
-                                        <td>{{ $peminjaman->tgl_pengembalian ?? '-' }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($peminjaman->tanggal_pinjam)->translatedFormat('l, d F') }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($peminjaman->tgl_wajib_kembali)->translatedFormat('l, d F') }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($peminjaman->tgl_pengembalian)->translatedFormat('l, d F') }}</td>
                                         <td>{{ $peminjaman->denda }}</td>
                                         <td>
                                             <span class="badge badge-{{ $peminjaman->status === 'dipinjam' ? 'warning' : 'success' }}">

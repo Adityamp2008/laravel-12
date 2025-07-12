@@ -57,9 +57,11 @@ class KelolaAnggotaController extends Controller
                 'no_hp'         => 'required|max:13',
                 'foto'          => 'nullable|file'
             ]);
+                  $username = strtolower(substr(str_replace(' ', '', $request->nama), 0, 10));
+
             $user = User::create([
                 'nama'      => $request->nama,
-                'username'  => $request->nis,
+                'username'  => $username,
                 'password'  => bcrypt($request->nis),
                 'peran'     => 'Anggota'
             ]);

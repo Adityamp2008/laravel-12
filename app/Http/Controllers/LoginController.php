@@ -26,8 +26,11 @@ class LoginController extends Controller
                 $user = Auth::user();
                 if ($user->peran == 'Admin') {
                     return redirect()->route('admin.dashboard');
-                } else {
-                    return 'anggota';
+                } elseif ($user-> peran == 'Anggota') {
+                    return redirect()-> route('anggota.dashboard');
+                }
+                 else {
+                    return 'role tidak di temukan';
                 }
                 return 'Login berhasil';
             } else {
